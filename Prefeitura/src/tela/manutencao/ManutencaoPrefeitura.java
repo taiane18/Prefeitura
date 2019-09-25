@@ -4,13 +4,34 @@
  * and open the template in the editor.
  */
 package tela.manutencao;
+import tela.listagem.ListagemPrefeitura;
 
 /**
  *
  * @author Administrador
  */
 public class ManutencaoPrefeitura extends javax.swing.JDialog {
+public ListagemPrefeitura listagem;
 
+//Entrando na Manutenção de Produto para Adicionar um novo Produto (OBS: o nome do método deverá ser o mesmo nome da classe)
+ public ManutencaoPrefeitura(java.awt.Frame parent, boolean modal, ListagemPrefeitura listagem) {
+        super(parent, modal);
+        initComponents();
+        this.listagem = listagem;
+        
+        jtfCodigo.setEnabled(false);  //desabilitando a edição do campo código
+        btnAlterar.setEnabled(false); //desabilitando o botão alterar
+        btnExcluir.setEnabled(false); //desabilitando o botão excluir
+  }
+ 
+ public ManutencaoPrefeitura(java.awt.Frame parent, boolean modal, ListagemPrefeitura listagem, int pk) {
+        super(parent, modal);
+        initComponents();
+        
+        jtfCodigo.setEnabled(false);  //desabilitando a edição do campo código
+        this.listagem = listagem;
+        controlador.ControladorPrefeitura.atualizaCampos(this, pk);//pegando os valores do BD e colocando na tela
+    }
     /**
      * Creates new form ManutencaoPrefeitura
      */

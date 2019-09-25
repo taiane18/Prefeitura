@@ -57,6 +57,10 @@ public class ControladorPrefeitura {
         boolean resultado = DaoPrefeitura.excluir(objeto);
         if (resultado) {
             JOptionPane.showMessageDialog(null, "Excluído com sucesso!");
+            if (man.listagem != null) {
+                atualizarTabela(man.listagem.tabela); //atualizar a tabela da listagem
+            }
+            man.dispose();//fechar a tela da manutenção
         } else {
             JOptionPane.showMessageDialog(null, "Erro!");
         }

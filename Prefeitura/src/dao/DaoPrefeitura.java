@@ -105,7 +105,7 @@ public class DaoPrefeitura {
      
     public static Prefeitura consultar(int primaryKey) {
         //editar o SQL conforme a entidade
-        String sql = "SELECT codigo, nome, endereco, nr_funcionario FROM produto WHERE codigo=?";
+        String sql = "SELECT codigo, nome, endereco, nr_funcionario FROM prefeitura WHERE codigo=?";
         PreparedStatement ps;
         try {
             ps = conexao.Conexao.getConexao().prepareStatement(sql);
