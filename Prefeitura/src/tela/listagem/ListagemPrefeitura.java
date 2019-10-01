@@ -157,6 +157,6 @@ manutencao.setVisible(true);    // TODO add your handling code here:
     public javax.swing.JButton btnNovo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabela;
+    public javax.swing.JTable tabela;
     // End of variables declaration//GEN-END:variables
 }

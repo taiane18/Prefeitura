@@ -29,6 +29,10 @@ public class ControladorPrefeitura {
         boolean resultado = DaoPrefeitura.inserir(objeto);
         if (resultado) {
             JOptionPane.showMessageDialog(null, "Inserido com sucesso!");
+            if (man.listagem != null) {
+                atualizarTabela(man.listagem.tabela); //atualizar a tabela da listagem
+            }
+            man.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
@@ -45,6 +49,10 @@ public class ControladorPrefeitura {
         boolean resultado = DaoPrefeitura.alterar(objeto);
         if (resultado) {
             JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
+            if (man.listagem != null) {
+                atualizarTabela(man.listagem.tabela); //atualizar a tabela da listagem
+            }
+            man.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
